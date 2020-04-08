@@ -7,18 +7,19 @@ export default class AddActivityForm extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      activityname: ""
+      activityname: "",
     };
   }
-  onActivityNameChange = e => {
+  onActivityNameChange = (e) => {
     this.setState({ activityname: e.target.value });
   };
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
-    console.log("The activity added by you: " + this.state.activityname);
-    this.props.onSubmit({
-      activityname: this.state.activityname
-    });
+    console.log("The activity added by you::s " + this.state.activityname);
+    // this.props.onSubmit({
+    //   activityname: this.state.activityname,
+    // });
+    return this.state;
   };
 
   render() {

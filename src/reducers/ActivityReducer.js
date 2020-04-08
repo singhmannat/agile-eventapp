@@ -1,8 +1,8 @@
 //const activityReducerDefaultState = [];
-const ActivityReducer = (state, action) => {
+const ActivityReducer = (state = { activityname: "" }, action) => {
   switch (action.type) {
     case "ADD_ACTIVITY":
-      return [...state, action.activity];
+      return [...state, action.activityname];
     default:
       return state;
   }

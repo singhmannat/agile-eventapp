@@ -3,16 +3,20 @@ import { connect } from "react-redux";
 import { addActivityAction } from "../actions/ActivityAction.js";
 import AddActivityForm from "./AddActivityForm.js";
 
-const AddActivityPage = props => (
+const AddActivityPage = (props) => (
   <div>
     <p>Add Activities below</p>
     <AddActivityForm
-      onSubmit={activity => {
-        props.dispatch(addActivityAction(activity));
-        props.history.push("/dashboard");
+      onSubmit={() => {
+        props.dispatch(addActivityAction(props.activity));
+        props.history.push("/");
       }}
     />
   </div>
 );
-
-export default connect()(AddActivityPage);
+const mapStateToProps = (state) => {
+  return {
+    activity: state,
+  };
+};
+export default connect(mapStateToProps)(AddActivityPage);
