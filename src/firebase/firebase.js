@@ -1,4 +1,4 @@
-//import * as firebase from "firebase";
+import * as firebase from "firebase";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBPyQXMMXsvDw3jr8HWYLEefPALufp1Gcc",
@@ -10,9 +10,8 @@ const firebaseConfig = {
   appId: "1:270796530947:web:3176c2236baca2ef193536",
   measurementId: "G-R1J0K6LTDF",
 };
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-export default firebaseConfig;
-
-// database.ref("activities").set({
-//   ActivityName: "Football",
-// });
+export { firebase, googleAuthProvider, database as default };

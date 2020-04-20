@@ -5,6 +5,7 @@ import AppRouter from "./AppRouter";
 import configureStore from "./store/configureStore.js";
 import * as serviceWorker from "./serviceWorker";
 import "./firebase/firebase.js";
+import "./styles/styles.css";
 
 const store = configureStore();
 console.log(store.getState());
