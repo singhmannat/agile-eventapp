@@ -1,6 +1,7 @@
 import React from "react";
 import database, { firebase } from "../firebase/firebase";
 import ActivityItems from "./ActivityItems";
+import ParentNavHeader from "./ParentNavHeader";
 
 export default class ActivityDashboardPage extends React.Component {
   constructor(props) {
@@ -50,10 +51,11 @@ export default class ActivityDashboardPage extends React.Component {
       <div>
         {this.state.user.displayName && (
           <p className="message-bar">
-            Welcome {this.state.user.displayName}, You are logged in as Guest.
+            Welcome {this.state.user.displayName}, You are logged in as Parent.
             Please enrol for the event below.
           </p>
         )}
+        <ParentNavHeader />
         <button className="logoutbutton" onClick={this.handleLogOut.bind(this)}>
           Logout
         </button>

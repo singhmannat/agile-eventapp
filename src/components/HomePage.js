@@ -1,7 +1,30 @@
 import React from "react";
-import { firebase, googleAuthProvider } from "../firebase/firebase";
+import database, { firebase, googleAuthProvider } from "../firebase/firebase";
+import ActivityItems from "./ActivityItems";
 
 export default class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activities: [],
+    };
+  }
+  componentDidMount() {
+    database.ref("activities").on("value", (snapshot) => {
+      const firebaseActivities = [];
+      snapshot.forEach((childSnapshot) => {
+        firebaseActivities.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val(),
+        });
+      });
+      this.setState({
+        activities: firebaseActivities,
+      });
+    });
+  }
+
   hostLogin() {
     googleAuthProvider.setCustomParameters({
       prompt: "select_account",
@@ -31,7 +54,7 @@ export default class HomePage extends React.Component {
     return (
       <div>
         <h1>Brogrammers</h1>
-        <p>Hello There.....</p>
+        <p>Hello There...</p>
         <p>Thanks,</p>
         <p>Balwinder, Gurpreet and Mannat</p>
         <button className="homepagebutton" onClick={this.hostLogin.bind(this)}>
@@ -43,6 +66,9 @@ export default class HomePage extends React.Component {
         >
           Parent Login
         </button>
+        {this.state.activities.map((activity) => {
+          return <ActivityItems key={activity.id} activity={activity} />;
+        })}
       </div>
     );
   }

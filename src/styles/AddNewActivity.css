@@ -7,6 +7,13 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.submit-message {
+  font-style: italic;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #0c552c;
+  font-weight: bold;
+}
+
 .ib-name-location {
   display: inline-block;
   padding: 30px;

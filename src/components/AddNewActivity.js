@@ -118,7 +118,9 @@ export default class AddNewActivity extends React.Component {
           Sign Out
         </button>
         <br></br>
-        {this.state.message && <p>{this.state.message}</p>}
+        {this.state.message && (
+          <p className="submit-message">{this.state.message}</p>
+        )}
         <br></br>
         <form onSubmit={this.onSubmit}>
           <div className="ib-name-location">
