@@ -6,7 +6,7 @@ export default class MyUpcomingActivities extends React.Component {
     return (
       <div>
         <ParentNavHeader />
-        <p>My Upcoming Activities</p>
+        <h3>My Upcoming Activities</h3>
       </div>
     );
   }

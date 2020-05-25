@@ -6,6 +6,7 @@ import ActivityDashboardPage from "./components/ActivityDashboardPage.js";
 import AddNewActivity from "./components/AddNewActivity.js";
 import AddNewChildPage from "./components/AddNewChildPage.js";
 import MyUpcomingActivities from "./components/MyUpcomingActivities.js";
+import HelpPage from "./components/HelpPage.js";
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -16,6 +17,7 @@ const AppRouter = () => (
       <Route path="/dashboard" component={ActivityDashboardPage} />
       <Route path="/addnewchild" component={AddNewChildPage} />
       <Route path="/mua" component={MyUpcomingActivities} />
+      <Route path="/helppage" component={HelpPage} />
     </Switch>
   </BrowserRouter>
 );

@@ -79,7 +79,7 @@ export default class AddNewActivity extends React.Component {
         ActivityLocation: this.state.activitylocation,
         ActivityAddress: this.state.activityaddress,
         ActivityDescription: this.state.activitydescription,
-        ActivityDate: moment(this.state.activitydate).format("MMM Do YYYY"),
+        ActivityDate: moment(this.state.activitydate).format("MM-DD-YYYY"),
         ActivityTime: this.state.activitytime,
         ActivityUserName: this.state.user.displayName,
         AgeGroup: this.state.agegroup,
@@ -108,10 +108,10 @@ export default class AddNewActivity extends React.Component {
     return (
       <div>
         {this.state.user.displayName && (
-          <p className="message-bar">
-            Welcome {this.state.user.displayName}, You are logged in as Host.
-            Please add your event here.
-          </p>
+          <h3 className="message-bar">
+            Welcome <u>{this.state.user.displayName}</u> , You are logged in as
+            Host. Please add your event here.
+          </h3>
         )}
         <br></br>
         <button className="logoutbutton" onClick={this.handleLogOut.bind(this)}>

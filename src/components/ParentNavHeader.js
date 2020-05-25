@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class ParentNavHeader extends React.Component {
   render() {
@@ -15,6 +15,9 @@ export default class ParentNavHeader extends React.Component {
             </li>
             <li>
               <Link to="/mua">My Upcoming Activities</Link>
+            </li>
+            <li>
+              <Link to="/helppage">Help Desk</Link>
             </li>
           </ul>
         </nav>
