@@ -262,10 +262,16 @@ export default class AddNewChildPage extends React.Component {
             ></input>
             <br></br>
             <div className="ib-submit-reset">
-              <button className="button">Submit</button>
+              <button type="submit" className="button">
+                Submit
+              </button>
             </div>
             <div className="ib-submit-reset">
-              <button className="button" onClick={this.reset.bind(this)}>
+              <button
+                type="reset"
+                className="button"
+                onClick={this.reset.bind(this)}
+              >
                 Reset
               </button>
             </div>

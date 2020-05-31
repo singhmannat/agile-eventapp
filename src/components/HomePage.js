@@ -1,6 +1,6 @@
 import React from "react";
 import database, { firebase, googleAuthProvider } from "../firebase/firebase";
-import ActivityItems from "./ActivityItems";
+import ActivityItemsHome from "./ActivityItemsHome";
 import moment from "moment";
 
 export default class HomePage extends React.Component {
@@ -73,7 +73,7 @@ export default class HomePage extends React.Component {
           Parent Login
         </button>
         {this.state.activities.map((activity) => {
-          return <ActivityItems key={activity.id} activity={activity} />;
+          return <ActivityItemsHome key={activity.id} activity={activity} />;
         })}
       </div>
     );
